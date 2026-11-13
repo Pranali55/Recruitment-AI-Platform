@@ -1,0 +1,5 @@
+namespace Recruitment.Api.Models;
+public class Job { public int Id{get;set;} public string Title{get;set;}=""; public string Department{get;set;}=""; public string Location{get;set;}=""; public string Description{get;set;}=""; public List<string> RequiredSkills{get;set;}=new(); public bool IsActive{get;set;}=true; public DateTime CreatedAt{get;set;}=DateTime.UtcNow; public List<JobApplication> Applications{get;set;}=new(); }
+public class Candidate { public int Id{get;set;} public string FullName{get;set;}=""; public string Email{get;set;}=""; public string Phone{get;set;}=""; public string ResumeText{get;set;}=""; public DateTime CreatedAt{get;set;}=DateTime.UtcNow; public List<JobApplication> Applications{get;set;}=new(); }
+public class JobApplication { public int Id{get;set;} public int JobId{get;set;} public Job? Job{get;set;} public int CandidateId{get;set;} public Candidate? Candidate{get;set;} public ApplicationStatus Status{get;set;}=ApplicationStatus.Applied; public DateTime CreatedAt{get;set;}=DateTime.UtcNow; }
+public enum ApplicationStatus { Applied,Screening,Shortlisted,Interview,Offered,Hired,Rejected }

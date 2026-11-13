@@ -1,0 +1,14 @@
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+.vs/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.DS_Store
+Thumbs.db
+.vscode/
